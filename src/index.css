@@ -1,0 +1,14 @@
+body {
+	background-color: #f8f9fa;
+	color: #212529;
+}
+
+.app-container {
+	max-width: 1000px;
+	margin: 2rem auto;
+	padding: 0 1rem;
+}
+
+.card-title {
+	font-weight: 600;
+}
