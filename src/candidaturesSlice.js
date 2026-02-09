@@ -6,14 +6,14 @@ const candidatureSlice = createSlice({
     {
       id: 1,
       candidat: "Mohamed El Amrani",
-      poste: "Développeur Web",
+      poste: "Web developer",
       departement: "IT",
       statut: "on hold",
     },
     {
       id: 2,
       candidat: "Fatima Zahra",
-      poste: "Assistante RH",
+      poste: "HR Assistante",
       departement: "RH",
       statut: "on hold",
     },
