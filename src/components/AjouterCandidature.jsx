@@ -31,43 +31,43 @@ export default function AjouterCandidature() {
     <div className="container app-container">
       <div className="card mb-4">
         <div className="card-body">
-          <h3 className="card-title mb-3">Ajouter une Candidature</h3>
+          <h3 className="card-title mb-3">Add an Application: </h3>
           <form onSubmit={handleAjouter}>
             <div className="mb-2">
-              <label className="form-label">Candidat</label>
+              <label className="form-label">Candidate</label>
               <input
                 className="form-control"
                 type="text"
-                placeholder="Candidat"
+                placeholder="Candidate"
                 value={nom}
                 onChange={(e) => setNom(e.target.value)}
               />
             </div>
 
             <div className="mb-2">
-              <label className="form-label">Poste</label>
+              <label className="form-label">Job</label>
               <input
                 className="form-control"
                 type="text"
-                placeholder="Poste"
+                placeholder="Job"
                 value={poste}
                 onChange={(e) => setPoste(e.target.value)}
               />
             </div>
 
             <div className="mb-3">
-              <label className="form-label">Département</label>
+              <label className="form-label">Department</label>
               <input
                 className="form-control"
                 type="text"
-                placeholder="Département"
+                placeholder="Department"
                 value={dept}
                 onChange={(e) => setDept(e.target.value)}
               />
             </div>
 
             <button type="submit" className="btn btn-primary">
-              Ajouter
+              Add
             </button>
           </form>
         </div>

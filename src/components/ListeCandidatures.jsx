@@ -15,18 +15,18 @@ export default function ListeCandidatures() {
 
   return (
     <div className="container app-container">
-      <h1 className="mb-3">Gestion des Candidatures</h1>
+      <h1 className="mb-3"> Applications Management</h1>
       {candidatures.length === 0 ? (
-        <div className="alert alert-info">Aucune candidature disponible</div>
+        <div className="alert alert-info">No applications available</div>
       ) : (
         <div className="table-responsive">
           <table className="table table-striped table-hover align-middle">
             <thead className="table-light">
               <tr>
-                <th>Candidat</th>
-                <th>Poste</th>
-                <th>Département</th>
-                <th>Statut</th>
+                <th>Candidate</th>
+                <th>Job</th>
+                <th>Department</th>
+                <th>Status</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -43,13 +43,13 @@ export default function ListeCandidatures() {
                   </td>
                   <td>
                     <button className="btn btn-success btn-sm me-2" onClick={() => dispatch(accepterCandidat(c.id))}>
-                      Accepter
+                      Accepte
                     </button>
                     <button className="btn btn-warning btn-sm me-2" onClick={() => dispatch(refuserCandidat(c.id))}>
-                      Refuser
+                      Refuse
                     </button>
-                    {c.statut === "en attente" && (
-                      <button className="btn btn-danger btn-sm" onClick={() => handleSupp(c.id)}>Supprimer</button>
+                    {c.statut === "on hold" && (
+                      <button className="btn btn-danger btn-sm" onClick={() => handleSupp(c.id)}>Delete</button>
                     )}
                   </td>
                 </tr>

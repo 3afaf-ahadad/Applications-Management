@@ -8,14 +8,14 @@ const candidatureSlice = createSlice({
       candidat: "Mohamed El Amrani",
       poste: "Développeur Web",
       departement: "IT",
-      statut: "en attente",
+      statut: "on hold",
     },
     {
       id: 2,
       candidat: "Fatima Zahra",
       poste: "Assistante RH",
       departement: "RH",
-      statut: "en attente",
+      statut: "on hold",
     },
   ],
   reducers: {
@@ -31,15 +31,15 @@ const candidatureSlice = createSlice({
     },
     accepterCandidat: (state, action) => {
       const cand = state.find((c) => c.id === action.payload);
-      if (cand) cand.statut = "acceptée";
+      if (cand) cand.statut = "accepted";
     },
     refuserCandidat: (state, action) => {
       const cand = state.find((c) => c.id === action.payload);
-      if (cand) cand.statut = "refusée";
+      if (cand) cand.statut = "refused";
     },
     supprimerCandidat: (state, action) => {
       return state.filter(
-        (c) => c.id !== action.payload || c.statut !== "en attente",
+        (c) => c.id !== action.payload || c.statut !== "on hold",
       );
     },
   },
