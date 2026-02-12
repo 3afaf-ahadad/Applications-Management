@@ -1,7 +1,8 @@
 # Applications Management
 
-A small React + Vite app to manage job applications (candidatures).
+A small React app to manage job applications using redux toolkit.
 
+## 🔗Link: https://tp-react-routage-server-json-yryu.vercel.app/
 ## Features
 - View a list of candidatures
 - Add new candidature
