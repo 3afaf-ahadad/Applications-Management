@@ -14,17 +14,17 @@ export default function ListeCandidatures() {
   };
 
   return (
-    <div className="container app-container">
-      <h1 className="mb-3"> Applications Management</h1>
+    <div className="glass-card">
+      <h3 className="mb-4">Active Applications</h3>
       {candidatures.length === 0 ? (
-        <div className="alert alert-info">No applications available</div>
+        <div className="alert alert-info bg-transparent border-info text-info">No applications available</div>
       ) : (
-        <div className="table-responsive">
-          <table className="table table-striped table-hover align-middle">
-            <thead className="table-light">
+        <div className="custom-table-container">
+          <table className="table table-hover align-middle">
+            <thead>
               <tr>
                 <th>Candidate</th>
-                <th>Job</th>
+                <th>Job Position</th>
                 <th>Department</th>
                 <th>Status</th>
                 <th>Actions</th>
@@ -32,25 +32,31 @@ export default function ListeCandidatures() {
             </thead>
             <tbody>
               {candidatures.map((c) => (
-                <tr key={c.id}>
-                  <td>{c.candidat}</td>
+                <tr key={c.id} className="candidature-row">
+                  <td>
+                    <div className="fw-bold">{c.candidat}</div>
+                  </td>
                   <td>{c.poste}</td>
                   <td>{c.departement}</td>
                   <td>
-                    <span className={`badge ${c.statut === 'accepté' ? 'bg-success' : c.statut === 'refusé' ? 'bg-danger' : 'bg-secondary'}`}>
+                    <span className={`badge ${c.statut === 'accepted' ? 'bg-success' : c.statut === 'refused' ? 'bg-danger' : 'bg-secondary'}`}>
                       {c.statut}
                     </span>
                   </td>
                   <td>
-                    <button className="btn btn-success btn-sm me-2" onClick={() => dispatch(accepterCandidat(c.id))}>
-                      Accepte
-                    </button>
-                    <button className="btn btn-warning btn-sm me-2" onClick={() => dispatch(refuserCandidat(c.id))}>
-                      Refuse
-                    </button>
-                    {c.statut === "on hold" && (
-                      <button className="btn btn-danger btn-sm" onClick={() => handleSupp(c.id)}>Delete</button>
-                    )}
+                    <div className="d-flex">
+                      {c.statut === "on hold" && (
+                        <>
+                          <button className="btn btn-success btn-sm me-2 action-btn" onClick={() => dispatch(accepterCandidat(c.id))}>
+                            Accepte
+                          </button>
+                          <button className="btn btn-warning btn-sm me-2 action-btn" onClick={() => dispatch(refuserCandidat(c.id))}>
+                            Refuse
+                          </button>
+                        </>
+                      )}
+                      <button className="btn btn-danger btn-sm action-btn" onClick={() => handleSupp(c.id)}>Delete</button>
+                    </div>
                   </td>
                 </tr>
               ))}
